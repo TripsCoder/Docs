@@ -4,7 +4,7 @@
 
 1. 推荐开发环境:VS2017+.NET Core2.2
 
-1. 获取 [MicBeach.NET开发辅助工具](http://www.baidu.com)
+1. 获取 [EZNEW.NET开发辅助工具](http://www.baidu.com)
 
 1. 下载示例数据库脚本，目前支持 [SQLServer](http://www.baidu.com) 和 [MySQL](http://www.baidu.com) 两种数据库
 

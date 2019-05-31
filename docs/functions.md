@@ -1,7 +1,7 @@
 # 功能模块
 
-## MicBeach.Util
+## EZNEW.Framework
 
-## MicBeach.Develop
+## EZNEW.Develop
 
-## MicBeach.Data
+## EZNEW.Data
