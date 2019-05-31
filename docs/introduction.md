@@ -1,6 +1,6 @@
 # 介绍
 
-<a class="github-button" href="https://github.com/MicBeach/Develop" data-icon="octicon-star" data-show-count="true" aria-label="Star jhildenbiddle/docsify-themeable on GitHub">Star</a>
+<a class="github-button" href="https://github.com/eznew-net/EZNEW.Develop" data-icon="octicon-star" data-show-count="true" aria-label="Star jhildenbiddle/docsify-themeable on GitHub">Star</a>
 
 ## 功能特点
 
