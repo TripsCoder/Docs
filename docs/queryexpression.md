@@ -92,12 +92,68 @@ roleQuery.In<RoleQuery>(r => r.SysNo, userQuery);//设置查询条件，角色�
 
 <img src="assets/images/setrecurve.png" alt="EZNEW" title="EZNEW">
 
+同样的，直接使用递归的方式对数据进行操作可能会破坏工作单元中的对象状态管理功能，使用的时候要特别注意
+
 ## 分页查询
+
+在进行数据分页查询的时候需要在查询表达式上设置分页信息，设置分页信息有两种方式：
+
+1：通过分页筛选参数类[PagingFilter]型设置，一般来说数据的筛选条件类型都可以继承该类型
+
+<img src="assets/images/rolefilterdto.png" alt="EZNEW" title="EZNEW">
+<img src="assets/images/queryexpression_create.png" alt="EZNEW" title="EZNEW">
+
+2：设置分页信息属性[PagingInfo]
+
+var roleQuery = QueryFactory.Create<RoleQuery>();<br>
+roleQuery.PagingInfo = new PagingFilter() { Page = 1, PageSize = 20 };
 
 ## 设置排序
 
+在查询数据的时候可以通过查询表达式来设置排序条件，例如查询所有角色，并按Level升序，CreateDate降序进行数据排序。
+
+var roleQuery = QueryFactory.Create<RoleQuery>();<br>
+roleQuery.Asc<RoleQuery>(r => r.Level);<br>
+roleQuery.Desc<RoleQuery>(r => r.CreateDate);
+
 ## 设置查询字段
 
-## 注意事项
+在执行数据查询的时候，有时候可能需要显示设置获取数据的字段属性（通常从对象管理的角度应避免这种操作，除了特殊的应用场合），查询表达式提供了两个属性[QueryFields]和[NotQueryFields]来控制最后数据查询字段属性的处理，前者是显示指定要查询出来的数据字段，后者则是用于自定要排除的数据字段，前者的优先级大于后者的优先级，也就是说一旦设置了[QueryFields]则会忽略[NotQueryFields]。
+
+1：查询所有角色，只查询出角色的名字
+var roleQuery = QueryFactory.Create<RoleQuery>();<br>
+roleQuery.AddQueryFields<RoleQuery>(r => r.Name);
+
+2：查询所有角色，不查询排序信息
+var roleQuery = QueryFactory.Create<RoleQuery>();<br>
+roleQuery.AddNotQueryFields<RoleQuery>(r => r.Sort);
+
+## 直接通过数据语句执行操作
+
+面向对象编程里面通常情况下我们都是通过操作不同的对象来完成，但是在实际的开发中可能需要直接利用数据的一些功能，或者是有使用框架提供的功能不能完成的工作，这时候就需要直接使用相关的数据操作语句，例如SQL语句来执行操作，所以查询表达式在除了提供面向对象的操作模式以外还提供通过传统的方式直接操作数据库，
+查询表达式提供了两个属性来对这种形式的支持，[QueryText]和[QueryTextParameters],分别表示要执行的语句和需要传递的参数，通过SetQueryText来设置语句和参数。
+
+var roleQuery = QueryFactory.Create<RoleQuery>();<br>
+roleQuery.SetQueryText("",null);<br>
+
+注意，一旦调用这个方法设置了执行语句那在查询表达式上设置的很多属性就会失效，因为系统只会按照开发人员设置的执行语句来严格的执行。
+
+## 设置数据加载属性
+
+这个功能主要用于涉及到延迟加载的属性使用的情况，在领域模型[Role]中的属性上级角色[Parent]就被设计成一个数据延迟加载的属性，也就是说默认情况下不会去主动加载该属性数据，只有在使用它的时候再去加载赋值，这样就能优化程序的性能
+
+<img src="assets/images/roleparent_field.png" alt="EZNEW" title="EZNEW">
+<img src="assets/images/roleparent_property.png" alt="EZNEW" title="EZNEW">
+
+在执行加载数据的时候通常就会去判断是否允许加载属性值,也就是说只有显示允许加载的属性系统才会去执行数据加载逻辑
+
+<img src="assets/images/loadparentrole.png" alt="EZNEW" title="EZNEW">
+
+要设置需要加载数据的属性可以通过对象设置，这种方式在我们后面讲领域对象的时候讲解，同时也可以在查询数据的时候通过查询表达式进行指定
+
+var roleQuery = QueryFactory.Create<RoleQuery>();<br>
+roleQuery.SetLoadPropertys<RoleQuery>(true, r => r.Parent);
 
 ## 总结
+
+本章介绍了查询表达式设计到的各种使用方法及其作用，在前面基础的使用方式上还可以进行灵活的组合使用来实现更强大的功能。同时需要特别注意的两点就是关于子查询和递归查询的使用，因为这两种方式可能会影响系统的对象状态管理功能。
