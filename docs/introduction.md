@@ -1,6 +1,6 @@
 # 介绍
 
-<a class="github-button" href="https://github.com/eznew-net/EZNEW.Develop" data-icon="octicon-star" data-show-count="true" aria-label="Star jhildenbiddle/docsify-themeable on GitHub">Star</a>
+<a class="github-button" href="https://github.com/eznew-net/EZNEW.Develop" data-icon="octicon-star" data-show-count="true" aria-label="Star jhildenbiddle/docsify-themeable on GitHub">点赞支持</a>
 
 ## 功能特点
 
@@ -14,7 +14,7 @@
   各主要功能模块相互独立，并通过结合依赖注入（DI）等技术手段应用到项目中，不但保证了功能的结构清晰和灵活，同时也方便在需要的时候进行功能的定制和扩展。
 
 - **高效：大幅提高开发人员工作效率**<br>
-  立足于框架本身的便捷性，同时配合使用EZNEW.NET开发辅助工具可以成倍的提高开发人员的日常工作效率，让程序员能有更多的时间去做更多有意义的事，例如学习新知识或者找女朋友...
+  立足于框架本身的便捷性，同时配合使用EZNEW.NET开发辅助工具可以成倍的提高开发人员的日常工作效率，让程序员能有更多的时间去做更多有意义的事，学习新技术或者去找女朋友...
 
 ## 联系 & 支持
 

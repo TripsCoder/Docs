@@ -1,6 +1,7 @@
 - [介绍](introduction)
 - [快速开始](quick-start)
 - [基础教程](functions)
+- [应用组件](functions)
 - [辅助工具](customization)
 - [常见问题](options)
 - [更新日志](markdown)
