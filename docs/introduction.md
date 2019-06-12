@@ -1,6 +1,6 @@
 # 介绍
 
-<a class="github-button" href="https://github.com/eznew-net/EZNEW.Develop" data-icon="octicon-star" data-show-count="true" aria-label="Star jhildenbiddle/docsify-themeable on GitHub">点赞支持</a>
+一起来为.NET开发社区的建设贡献一份自己的力量吧  <a class="github-button" href="https://github.com/eznew-net/EZNEW.Develop" data-icon="octicon-star" data-show-count="true" aria-label="Star jhildenbiddle/docsify-themeable on GitHub">点赞支持</a>
 
 ## 功能特点
 
