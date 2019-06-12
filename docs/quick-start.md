@@ -50,3 +50,9 @@
 ## 项目结构
 
 1：应用程序简要层次结构
+
+<img src="assets/images/applicationlayer.png" alt="EZNEW" title="EZNEW">
+
+2：应用程序目录结构
+
+<img src="assets/images/appfolder.png" alt="EZNEW" title="EZNEW">
