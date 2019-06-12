@@ -2,6 +2,7 @@
 
 + 了解仓储的功能
 + 默认仓储模式的使用
++ 聚合函数
 + 仓储事件
 
 ## 资源仓储
@@ -21,6 +22,16 @@
 | IAggregationThreeRelationRepository | DefaultAggregationThreeRelationRepository| 三者关系结构领域对象仓储模式，使用方式类似于IAggregationRelationRepository模式 |
 
 仓储的主要工作是在设计和使用上面，除了默认通用的实现模式外，可能还会根据业务需要自己去自定义实现，例如参考示例中的和[TriggerCondition]相关的仓储实现就是在已有的基础了进行了自定义扩展。
+
+## 聚合函数
+
+默认仓储除了提供领域对象的操作方法以外，为了适应日常开发的需要还提供几个常用聚合函数的封装来方便我们的开发，提供的聚合函数有：
+    + Count：获取符合条件的数据量
+    + Max：求最大值
+    + Min：求最小值
+    + Sum：求和
+    + Avg：求平均值
+    
 
 ## 仓储事件
 
