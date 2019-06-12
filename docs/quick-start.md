@@ -45,7 +45,8 @@
 <img src="assets/images/addmysqlnuget.png" alt="EZNEW" title="EZNEW">
 <img src="assets/images/mysql_dbconfig.png" alt="EZNEW" title="EZNEW">
 
-    6：编译运行项目
-<img src="assets/images/demoshow.png" alt="EZNEW" title="EZNEW">
+    6：编译运行
 
 ## 项目结构
+
+1：应用程序简要层次结构
