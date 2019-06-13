@@ -4,9 +4,9 @@
 
 1. 推荐开发环境:VS2017+.NET Core 2.2
 
-1. 获取 [EZNEW.NET开发辅助工具](https://raw.githubusercontent.com/eznew-net/Demo/master/Tool/EZNEW.Coder.zip)
+1. 获取 [EZNEW.NET开发辅助工具](https://raw.githubusercontent.com/eznew-net/Docs/master/Tool/EZNEW.Coder.zip)
 
-1. 下载示例数据库脚本，目前支持 [SQLServer](https://github.com/eznew-net/Demo/blob/master/Tool/DB/sqlserver.sql) 和 [MySQL](https://github.com/eznew-net/Demo/blob/master/Tool/DB/mysql.sql) 两种数据库。
+1. 下载示例数据库脚本，目前支持 [SQLServer](https://github.com/eznew-net/Docs/blob/master/Tool/DB/sqlserver.sql) 和 [MySQL](https://github.com/eznew-net/Docs/blob/master/Tool/DB/mysql.sql) 两种数据库。
 
 1. 所使用到的框架功能Nuget包已全部发布到 [nuget.org](https://www.nuget.org/packages?q=EZNEW)，可以直接使用。
 

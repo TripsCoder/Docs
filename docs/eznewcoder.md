@@ -1,6 +1,6 @@
 # 开发辅助工具
 
-[[下载]](https://raw.githubusercontent.com/eznew-net/Demo/master/Tool/EZNEW.Coder.zip)
+[[下载]](https://raw.githubusercontent.com/eznew-net/Docs/master/Tool/EZNEW.Coder.zip)
 
 辅助工具只是提供一些简单小的工具来辅助开发人员，提高开发效率，很多内容可能通过工具生成出来并不能直接使用，需要进行进一步修改，主要来了解提供的一些常用的一些功能
 
