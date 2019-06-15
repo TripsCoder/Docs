@@ -19,4 +19,5 @@
 | IAggregationRelationRepository | DefaultAggregationRelationRepository | 关系结构领域对象仓储模式，参考：IUserAuthorizeRepository->UserAuthorizeRepository |
 | IThreeRelationRepository | DefaultThreeRelationRepository| 三者关系结构数据仓储模式，使用方式类似于IRelationRepository模式 |
 | IAggregationThreeRelationRepository | DefaultAggregationThreeRelationRepository| 三者关系结构领域对象仓储模式，使用方式类似于IAggregationRelationRepository模式 |
+
 ## 仓储事件
