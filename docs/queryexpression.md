@@ -78,6 +78,42 @@ roleQuery.In<RoleQuery>(r => r.SysNo, userQuery);//设置查询条件，角色�
 
 要特别的注意的是作为条件的子查询表达式必须要设置用作关联的字段属性值，子查询同样可以灵活的嵌套来提供更复杂的查询要求。同时要特别注意通过包含子查询的表达式操作数据，例如删除或者修改可能会破坏框架内部的对象资源状态管理，因为这实质上并不是严格意义上的针对对象的处理。
 
+## 连接查询
+
+连接查询也是数据库里面获取数据的一个概念,通常也是需要跨越多张数据表的时候，查询表达式提供了常见的内连接，外连接，交叉连接等常见功能，在使用连接查询的时候就要指定连接两张表的连接字段，指定连接字段可以通过两种方式，通过配置或者是在使用连接操作的时候直接指定
+
+    1：通过配置设置，例如角色[Role]和用户&角色关系[UserRole],要指定它们的关联关系只需要在
+       [RoleEntity]或者[UserRoleEntity]两个实体其中任意一个上进行配置一次就可以了
+       （通常是配置在关系实体上）,例如这里我们在[UserRoleEntity]进行配置
+
+<img src="assets/images/entityrelation.png" alt="EZNEW" title="EZNEW">
+
+    2：使用的时候指定关联字段
+       roleQuery.EqualInnerJoin<RoleQuery, UserRoleQuery>(r => r.SysNo, ur => ur.RoleSysNo, userRoleQuery);
+
+下面列举几种常见的场景来演示连接查询的基本使用(假定已经配置了相应的数据关系)：
+
+1：查询用户编号为1的用户绑定所有角色信息
+```C#
+var userRoleQuery = QueryFactory.Create<UserRoleQuery>(ur => ur.UserSysNo == 1);
+var roleQuery = QueryFactory.Create<RoleQuery>();
+roleQuery.EqualInnerJoin(userRoleQuery);
+```
+
+2：查询用户名等于eznew的用户绑定的所有角色信息
+```C#
+//查询用户
+var userQuery = QueryFactory.Create<UserQuery>(u=>u.UserName=="eznew");
+//查询用户&角色绑定信息
+var userRoleQuery = QueryFactory.Create<UserRoleQuery>();
+userRoleQuery.EqualInnerJoin(userQuery);
+//查询角色
+var roleQuery = QueryFactory.Create<RoleQuery>();
+roleQuery.EqualInnerJoin(userRoleQuery);
+```
+
+上面只是演示了如何讲连接查询应用到查询表达式，连接查询支持嵌套来达到多表的连接查询，这里演示的是内连接的等值连接，同时还提供了其它的不等值连接等扩展方法，它们在使用上都是一样的，同时被连接的查询表达式本身是独立的，它也可以连接其它表达式，包含子查询以及递归查询等复杂的条件，通过将这些功能相组合，可以实现很多灵活复杂的查询功能。
+
 ## 递归查询
 
 递归查询同样是直接和数据库相关联的一个概念，通常用在树形结构的数据操作中，例如我们示例中的角色信息就是按一种常规典型的方式设计的树形结构数据，在涉及到对这一种特殊结构的数据操作中可能会影响到数据的上下级，当然在尽可能允许的情况下还是推荐通过业务代码来实现递归的业务逻辑来直接操作上下级对象数据，但是在某些情况下为了程序开发的便利性就可以使用递归查询的特性来简化我们的开发。
