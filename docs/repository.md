@@ -21,9 +21,8 @@
 | IThreeRelationRepository | DefaultThreeRelationRepository| 三者关系结构数据仓储模式，使用方式类似于IRelationRepository模式 |
 | IAggregationThreeRelationRepository | DefaultAggregationThreeRelationRepository| 三者关系结构领域对象仓储模式，使用方式类似于IAggregationRelationRepository模式 |
 
-<<<<<<< HEAD
 ## 仓储事件
-=======
+
 仓储的主要工作是在设计和使用上面，除了默认通用的实现模式外，可能还会根据业务需要自己去自定义实现，例如参考示例中的和[TriggerCondition]相关的仓储实现就是在已有的基础了进行了自定义扩展。
 
 ## 聚合函数
@@ -55,4 +54,3 @@
 ## 总结
 
 本篇教程主要介绍了和资源仓储的相关概念以及默认实现的几种仓储模式，这一部分更详细的使用最好是参考实际的使用示例，同时也要思考怎样针对自己的资源对象设计一个更合理的仓储实现，因为不合理的的仓储实现就会直接影响到领域对象和相关业务逻辑的设计和实现。
->>>>>>> 266a63bbcfbd5f3e2f975a4cd10cc2f5df5c1f2c
