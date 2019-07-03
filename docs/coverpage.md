@@ -9,3 +9,4 @@
 
 [开始使用](introduction)
 [GitHub](https://github.com/eznew-net)
+[视频讲解](https://study.163.com/course/introduction.htm?share=2&shareId=400000000535035&courseId=1005643030&_trace_c_p_k2_=6aa1fbf2d820467593b146d07651320e)
